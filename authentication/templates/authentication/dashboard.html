@@ -1,0 +1,227 @@
+
+  <style>
+  $nav-bg: #333366;
+$nav-color: #8395AF;
+
+nav{
+  background-color: $nav-bg;
+  width:100%;
+  height: 35px;
+  padding: 5px 0;
+  display:block;
+  position:relative;
+  z-index:99;
+  }
+#hamburger-menu{
+  color: $nav-color;
+  vertical-align:middle;
+  display:inline-block;
+  transition: .1s;
+  cursor: pointer;
+  &:hover{
+    color: lighten($nav-color, 50%);
+  }
+}
+%menu{
+  background-color: $nav-bg;
+  position:relative;
+  display:inline-block;
+  z-index:10;
+  height:30px;
+  padding: 5px 20px;
+}
+.menu{
+  @extend %menu;
+}
+.menu-right{
+  @extend %menu;
+  float:right;
+}
+.menu-list{
+  list-style: none;
+  display:inline-block;
+  padding:0;
+  margin:0 0 0 20px;
+  color: $nav-color;
+  position:relative;
+  li{
+    display: inline-block;
+    margin: 0 12px;
+    vertical-align: middle;
+    a{
+      color: #8395AF;
+      text-decoration: none;
+      transition: .1s;
+      &:hover{
+        color: #fff;
+      }
+    }
+  }
+}
+
+.nav-search{
+  display:inline-block;
+  position:absolute;
+  z-index:1;
+  left:0;
+  width:100%;
+  i{
+    position:absolute;
+    color: lighten($nav-color, 10%);
+    left:655px;
+    z-index: 5;
+    padding:8px 15px;
+  }
+  input{
+  height:35px;  
+    box-shadow: none;
+  border: 0;
+    border-radius: 3px;
+    width:calc(100% - 900px);
+    position:absolute;
+    background-color: #485D82;
+    padding: 10px 10px 10px 40px;
+    color: lighten($nav-color, 30%);
+    margin-left: 660px;
+    &::placeholder{
+      color: lighten($nav-color, 10%);
+      opacity:1;
+    }
+  }
+}
+
+.notification-number{
+  position:absolute;
+  font-size:12px;
+  font-weight:600;
+  color: lighten($nav-color, 30%);
+  top:-2px;
+}
+  </style>
+
+<nav>
+  <div class="menu">
+    <i class="fa fa-bars" id="hamburger-menu" aria-hidden="true"></i>
+    <ul class="menu-list">
+      <li><a href="{% url 'index' %}"><i class="fa fa-pie-chart fa-fw" aria-hidden="true"></i> Home</a></li>
+      <li><a href="{% url 'dashboard' %}"><i class="fa fa-tachometer fa-fw" aria-hidden="true"></i> Dashboard</a></li>
+     
+      <li><a href="{% url 'status' %}"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Status</a></li>
+      <li><a href="{% url 'ratings' %}"><i class="fa fa-tachometer fa-fw" aria-hidden="true"></i> Ratings</a></li>
+      <li><a href="{% url 'logout' %}"><i class="fa fa-pie-chart fa-fw" aria-hidden="true"></i> logout</a></li>
+    </ul>
+   
+  </div>
+  <div class="nav-search">
+  <i class="fa fa-search" aria-hidden="true"></i>
+  <input type="search" placeholder="Search"/>
+    </div>
+
+    <form method="POST" action="{%  url 'edit' %}">
+      {% csrf_token %} 
+      <div class="row">
+           <div class="col-md-5 pr-1">
+               <div class="form-group">
+                   <label>Emp_Id (disabled)</label>
+                   <input type="number" class="form-control" disabled=""  placeholder="id" value="{{ user.pk }}" name="id" >
+               </div>
+           </div>
+           <div class="col-md-3 px-1">
+               <div class="form-group">
+                   <label>Name</label>
+                   <input type="text" class="form-control"   disabled="" placeholder="name" value="{{ user.name }}" name="name">
+               </div>
+           </div>
+           <div class="col-md-4 pl-1">
+               <div class="form-group">
+                   <label for="exampleInputEmail1">Email</label>
+                   <input type="email" class="form-control"   placeholder="email" value="{{ user.email }}" name="email">
+               </div>
+           </div>
+
+       
+
+     
+</div>
+       
+       <div class="row">
+          
+           <div class="col-md-4 px-1">
+               <div class="form-group">
+                   <label>acheivement</label>
+                   <input type="text" class="form-control"  placeholder="acheivements" value="{{ user.acheivements }}" name="acheivement">
+               </div>
+           </div>
+           
+       </div>
+<div class="row">
+           <div class="col-md-4 pr-1">
+               <div class="form-group">
+                   <label>Stream</label>
+                   <input type="text" class="form-control"   placeholder="stream" value="{{ user.stream }}" name="stream">
+               </div>
+           </div>
+           
+           <!-- <div class="col-md-4 pl-1">
+               <div class="form-group">
+                   <label>Reference link</label>
+                   <input type="url" class="form-control"  placeholder="reference link" value="{{ user.url }}" name="url">
+               </div>
+           </div> -->
+       </div>
+
+<div class="row">
+           <div class="col-md-4 pr-1">
+               <div class="form-group">
+                   <label>Contact Number</label>
+                   <input type="number" class="form-control"  placeholder="username" value="{{ user.contact_number }}" name="contact_number">
+               </div>
+           </div>
+           <div class="col-md-4 px-1">
+               <div class="form-group">
+                   <label>Password</label>
+                   <input type="text" class="form-control"  disabled="" placeholder="password" value="******" name="password">
+               </div>
+           </div>
+       </div>
+             
+       
+       <button type="submit" name="update" value="update" class="btn btn-info btn-fill pull-right">Update Profile</button>
+       <div class="clearfix"></div>
+   </form>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card card-user">
+<div class="card-image">
+   <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="...">
+</div>
+<div class="card-body">
+   <div class="author">
+       <a href="#">
+           <img class="avatar border-gray" src="../assets/img/faces/face-3.jpg" alt="...">
+           <br>
+           <br>
+           <h5 class="title">{{ user.name }}</h5>
+       </a>
+       <p class="description">
+          {{ user.designation }}
+       </p>
+   </div>
+   <p class="description text-center">
+      
+       <br>{{ user.email }}
+     
+   </p>
+</div>
+<hr> 
+  <div class="menu-right">
+  <ul class="menu-list">
+    <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i><span class="notification-number">99</span></a></li>
+    <li><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i></a></li>
+    <li><a href=""><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
+    <li><a href=""><i class="fa fa-power-off" aria-hidden="true"></i></a></li>
+    </ul>
+  </div>
+</nav>

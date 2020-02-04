@@ -1,0 +1,33 @@
+<img src="{{ author.url_picture }}">
+<h3>Name: {{ author.name }}</h3>
+<h3>affiliation: {{ author.affiliation }}</h3>
+
+<h3>Emails: {{ author.email }}</h3>
+<h3>Interests: </h3>
+
+	{% for interest in author.interests %}
+		
+		<p>{{ interest }}</p>
+
+	{% endfor %}
+<h3>h-index: {{ author.hindex }}</h3>
+<h3>h-index5y: {{ author.hindex5y }}</h3>
+<h3>i10-index: {{ author.i10index }}</h3>
+<h3>i10-index5y: {{ author.i10index5y }}</h3>
+<h3>cited By: {{ author.citedby }}</h3>
+<h3>cited by 5y: {{ author.citedby5y }}</h3>
+<h3>co-authors:</h3>
+	{% for cauth in author.coauthors %}
+		
+		<p>{{ cauth.name }}</p>
+
+	{% endfor %}
+<h3>Publications: </h3>
+{% for index,pub in publicationlist %}
+	<form method='POST',action="">
+		<p>{{ pub }}</p>
+		<a href="{% url 'SinglePublication' authorName=author.name pubind=index %}">See Full Description</a>
+	</form>
+{% endfor %}
+
+
