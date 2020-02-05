@@ -2,23 +2,29 @@
 
 <form method='POST', action = "{% url 'searchAuthors' %}">
 	{% csrf_token %}
-	<h1>hello</h1>
+	<!-- <h1>hello</h1> -->
 	<input type = 'text',, name = 'keyword'>
 	<input type= 'submit'>
 
 </form>
 
-{% for auth,profile_link in author%}
+{% for auth,profile_link,interest in author%}
 	<div>
 	<form method = "POST" action="">
 		{% csrf_token %}
 		<p style="text-align: center;font-size: 35px",name= "authorName"> {{ auth }}
 			
 		</p>
-		<a href = '{{ profile_link }}' >Original Profile </a>
+		<!-- <a href = '{{ profile_link }}' >Original Profile </a> -->
 		<!-- <input type = 'submit', value= 'Check Profile', placeholder = '{{ auth }}', name = 'authorName'> -->
+		<img src="{{ profile_link }}">
 		<a href="{% url 'SingleAuthor' authorName=auth %}" >checkoutProfile</a>
-		<input type = 'submit', value= 'Check Profile'>
+		<h4>Interests: </h4>
+		{% for i in interest %}
+			 <p>{{ i }}</p>
+		{% endfor %}
+		
+		<!-- <input type = 'submit', value= 'Check Profile'> -->
 	</form>
 	</div>
 {% endfor %}
