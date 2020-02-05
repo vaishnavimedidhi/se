@@ -76,22 +76,26 @@ def SinglePublication(request,authorName,pubind):
 	pages = None 
 	volume = None
 	journal = None
+	eprint = None
+	originalUrl=None
+	year = None
 	context = {}
 	#All the Attributes
 	title = myPublication.bib['title']
 	abstract = re.sub('<[^>]+>', '', str(myPublication.bib['abstract']))
 	author = myPublication.bib['author']
-	eprint = myPublication.bib['eprint']
+	if 'eprint' in myPublication.bib.keys():
+		eprint = myPublication.bib['eprint']
 	if 'journal' in myPublication.bib.keys():
 		journal = myPublication.bib['journal']
 	if 'pages' in myPublication.bib.keys():
 		pages = myPublication.bib['pages']
-	
-	originalUrl = myPublication.bib['url']
+	if 'originalUrl' in myPublication.bib.keys():
+		originalUrl = myPublication.bib['url']
 	if 'volume' in myPublication.bib.keys():
 		volume = myPublication.bib['volume']
-	
-	year = myPublication.bib['year']
+	if 'year' in myPublication.bib.keys():
+		year = myPublication.bib['year']
 	citedby = myPublication.citedby
 	idCitations = myPublication.id_citations
 	idScholarcitedby = myPublication.id_scholarcitedby

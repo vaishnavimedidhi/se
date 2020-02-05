@@ -1,11 +1,24 @@
 <h3>{{ title }} </h3>
 <p ><b>Abstract: </b></p>
 <p>{{ abstract }}</p>
+{% if eprint %}
 <p><a href="{{ eprint }}">Jmlr Paper pdf Version</a></p>
+{% endif %}
+{% if originalUrl %}
+<p><a href="{{ originalUrl }}">Original Jmlr Paper</a></p>
+{% endif %}
+{% if journal %}
 <p>journal: {{ journal }}</p>
+{% endif %}
+{% if pages %}
 <p>pages: {{ pages }}</p>
+{% endif %}
+{% if volume %}
 <p>Volume: {{ Volume }}</p>
+{% endif %}
+{% if year %}
 <p>year: {{ year }}</p>
+{% endif %}
 <p>citedby: {{ citedby }}</p>
 <p>id_citations: {{ idCitations }}</p>
 <p>id_scholar_cited_by: {{ idScholarcitedby }}</p>
