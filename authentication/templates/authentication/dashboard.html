@@ -1,123 +1,83 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WELCOME DASHBOARD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
-  $nav-bg: #333366;
-$nav-color: #8395AF;
-
-nav{
-  background-color: $nav-bg;
-  width:100%;
-  height: 35px;
-  padding: 5px 0;
-  display:block;
-  position:relative;
-  z-index:99;
-  }
-#hamburger-menu{
-  color: $nav-color;
-  vertical-align:middle;
-  display:inline-block;
-  transition: .1s;
-  cursor: pointer;
-  &:hover{
-    color: lighten($nav-color, 50%);
-  }
-}
-%menu{
-  background-color: $nav-bg;
-  position:relative;
-  display:inline-block;
-  z-index:10;
-  height:30px;
-  padding: 5px 20px;
-}
-.menu{
-  @extend %menu;
-}
-.menu-right{
-  @extend %menu;
-  float:right;
-}
-.menu-list{
-  list-style: none;
-  display:inline-block;
-  padding:0;
-  margin:0 0 0 20px;
-  color: $nav-color;
-  position:relative;
-  li{
-    display: inline-block;
-    margin: 0 12px;
-    vertical-align: middle;
-    a{
-      color: #8395AF;
-      text-decoration: none;
-      transition: .1s;
-      &:hover{
-        color: #fff;
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 1500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
       }
+      .row.content {height: auto;} 
     }
-  }
-}
-
-.nav-search{
-  display:inline-block;
-  position:absolute;
-  z-index:1;
-  left:0;
-  width:100%;
-  i{
-    position:absolute;
-    color: lighten($nav-color, 10%);
-    left:655px;
-    z-index: 5;
-    padding:8px 15px;
-  }
-  input{
-  height:35px;  
-    box-shadow: none;
-  border: 0;
-    border-radius: 3px;
-    width:calc(100% - 900px);
-    position:absolute;
-    background-color: #485D82;
-    padding: 10px 10px 10px 40px;
-    color: lighten($nav-color, 30%);
-    margin-left: 660px;
-    &::placeholder{
-      color: lighten($nav-color, 10%);
-      opacity:1;
-    }
-  }
-}
-
-.notification-number{
-  position:absolute;
-  font-size:12px;
-  font-weight:600;
-  color: lighten($nav-color, 30%);
-  top:-2px;
-}
   </style>
+</head>
+<body>
 
-<nav>
-  <div class="menu">
-    <i class="fa fa-bars" id="hamburger-menu" aria-hidden="true"></i>
-    <ul class="menu-list">
-      <li><a href="{% url 'index' %}"><i class="fa fa-pie-chart fa-fw" aria-hidden="true"></i> Home</a></li>
-      <li><a href="{% url 'dashboard' %}"><i class="fa fa-tachometer fa-fw" aria-hidden="true"></i> Dashboard</a></li>
-     
-      <li><a href="{% url 'status' %}"><i class="fa fa-user fa-fw" aria-hidden="true"></i> Status</a></li>
-      <li><a href="{% url 'ratings' %}"><i class="fa fa-tachometer fa-fw" aria-hidden="true"></i> Ratings</a></li>
-      <li><a href="{% url 'logout' %}"><i class="fa fa-pie-chart fa-fw" aria-hidden="true"></i> logout</a></li>
-    </ul>
-   
-  </div>
-  <div class="nav-search">
-  <i class="fa fa-search" aria-hidden="true"></i>
-  <input type="search" placeholder="Search"/>
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h4>DASHBOARD</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"><a href="{% url 'dashboard' %}">HOME</a></li>
+        <li><a href="{% url 'dashboard' %}">PROFILE</a></li>
+        <li><a href="{% url 'dashboard' %}">UPDATE PROFILE</a></li>
+        <li><a href="{% url 'dashboard' %}">PROJECTS</a></li>
+        <li><a href="{% url 'dashboard' %}">REQUESTS</a></li>
+        <li><a href="http://127.0.0.1:8000/searchauthor/searchauthor/">SEARCH</a></li>
+
+      </ul><br>
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="SEARCH PROJECTS/PROFESSORS/PROFILE">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
     </div>
 
-    <form method="POST" action="{%  url 'edit' %}">
+    <div class="col-sm-9">
+      <h4><marquee><small>WELCOME</small></marquee></h4>
+      <hr>
+      <h2>PROFILE</h2>
+      
+      <h5><span class="label label-danger">All is well</span> <span class="label label-primary">life is a race</span></h5><br>
+      <p>Short description...</p>
+      <br><br>
+      
+     
+      <h4>Leave a Comment:</h4>
+      <form role="form">
+        <div class="form-group">
+          <textarea class="form-control" rows="3" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+      </form>
+      <br><br>
+          <form method="POST" action="{%  url 'edit' %}">
       {% csrf_token %} 
       <div class="row">
            <div class="col-md-5 pr-1">
@@ -189,39 +149,9 @@ nav{
        <button type="submit" name="update" value="update" class="btn btn-info btn-fill pull-right">Update Profile</button>
        <div class="clearfix"></div>
    </form>
-</div>
-</div>
-</div>
-<div class="col-md-4">
-<div class="card card-user">
-<div class="card-image">
-   <img src="https://ununsplash.imgix.net/photo-1431578500526-4d9613015464?fit=crop&fm=jpg&h=300&q=75&w=400" alt="...">
-</div>
-<div class="card-body">
-   <div class="author">
-       <a href="#">
-           <img class="avatar border-gray" src="../assets/img/faces/face-3.jpg" alt="...">
-           <br>
-           <br>
-           <h5 class="title">{{ user.name }}</h5>
-       </a>
-       <p class="description">
-          {{ user.designation }}
-       </p>
-   </div>
-   <p class="description text-center">
       
-       <br>{{ user.email }}
-     
-   </p>
-</div>
-<hr> 
-  <div class="menu-right">
-  <ul class="menu-list">
-    <li><a href=""><i class="fa fa-bell" aria-hidden="true"></i><span class="notification-number">99</span></a></li>
-    <li><a href=""><i class="fa fa-tachometer" aria-hidden="true"></i></a></li>
-    <li><a href=""><i class="fa fa-volume-down" aria-hidden="true"></i></a></li>
-    <li><a href=""><i class="fa fa-power-off" aria-hidden="true"></i></a></li>
-    </ul>
-  </div>
-</nav>
+      
+
+
+</body>
+</html>

@@ -95,42 +95,46 @@
     </style>
 </head>
 
-
+<body bgcolor="#f1f1f1">
 <div class="wrap">
-        <h1 class="pen-title">CSS List View and Grid View Swicher</h1>
-        <p class="pen-description">Switch between list and grid view for content.</p>
+        <h1 class="pen-title" align="center">WELCOME HOME</h1>
+        
         <!-- Begin Your Code -->
         
         <section class="content">
-            
-            <input type="radio" name="view-filter" id="list-view" class="list-view-radio view-radio" checked><label for="list-view"><i class="fa fa-list-ul"></i> List View</label>
-            
-            <input type="radio" name="view-filter" id="grid-view" class="grid-view-radio view-radio"><label for="grid-view"><i class="fa fa-th"></i> Grid View</label>
+            <br>
+            <br>
+            <br>
+             <br>
+            <br>
+            <br>
+           
             <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ml-auto">
                             {% if user.is_authenticated %}
                             <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="{% url 'dashboard' %}">{{ user.username }}</a>
+                                   <h2 align="center"> <a class="nav-link js-scroll-trigger" href="{% url 'dashboard' %}">{{ user.username }}'s DASHBOARD</a></h2>
                                   </li>
                                  
                                   <li class="nav-item">
-                                    <a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">logout</a>
+                                    <h2 align="center"><a class="nav-link js-scroll-trigger" href="{% url 'logout' %}">LOGOUT</a></h2>
                                   </li>
                             
                           {% else %}
                       <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'signin' %}">Sign in</a>
+                       <h2 align="center"> <a class="nav-link js-scroll-trigger" href="{% url 'signin' %}">SIGN IN</a></h2>
                       </li>
                      
                       <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="{% url 'signup' %}">Sign Up</a>
+                        <h2 align="center"><a class="nav-link js-scroll-trigger" href="{% url 'signup' %}">SIGN UP</a></h2>
                       </li>
                       {% endif %}
                     </ul>
                   </div>
             
-            <a href="http://127.0.0.1:8000/searchauthor/searchauthor/">search</a>
+            <h2 align="center"><a href="http://127.0.0.1:8000/searchauthor/searchauthor/">SEARCH</a></h2>
         </section>
     
         <!-- End Your Code -->
     </div><!-- .wrap -->
+</body>

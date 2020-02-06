@@ -84,7 +84,7 @@ def edit(request):
 def status(request):
     return redirect('index') 
 
-def logout_view(request):
+def logoutView(request):
     logout(request)
     return redirect('index')
 

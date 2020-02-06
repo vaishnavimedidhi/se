@@ -1,5 +1,70 @@
-<h3 style="text-align: center;">Profile Search</h3>
-
+<style> 
+	p {                                         
+		margin-left: 70px; 
+		font-weight: bold ; 
+		clear: left; 
+		width: 100px; 
+		text-align: left; 
+		margin-right: 10px; 
+		font-family:sans-serif,bold, Arial, Helvetica; 
+		font-size:14px; 
+		text-decoration-color: white;
+		
+	} 
+	 input[type=reset] {
+	  background-color:#4CAF50;
+	  border: none;
+	  color:white;
+	  padding: 10px 20px;
+	  text-decoration: none;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	}
+	input[type=button], input[type=submit]{
+	 float:right;
+	}
+	input[type=button], input[type=submit]{
+		background-color:#4CAF50;
+	  border: none;
+	  color:white;
+	
+	  align-items: flex-end;
+	  padding: 10px 20px;
+	  text-decoration: none;
+	  margin: 4px 2px;
+	  cursor: pointer;
+	
+	}
+	div {  
+		box-sizing: border-box; 
+		width: 100%; 
+		border:  solid black; 
+		float: left; 
+		align-content: center; 
+		align-items: center; 
+	} 
+	   
+	form {                                         
+		margin: 0 auto; 
+		width: 600px; 
+		
+		
+	}
+	
+	input[type=text] {
+	
+	  border: none;
+	  border-bottom: 2px solid black;
+	
+	}
+	
+	input[type=text]:focus {
+	  border: 3px solid white;
+	}
+	</style>
+	<body bgcolor="#f1f1f1">
+<h1 style="text-align: center;">PROFILE SEARCH</h1>
+<div>
 <form method='POST', action = "{% url 'searchAuthors' %}">
 	{% csrf_token %}
 	<!-- <h1>hello</h1> -->
@@ -7,7 +72,7 @@
 	<input type= 'submit'>
 
 </form>
-
+</div>
 {% for auth,profile_link,interest in author%}
 	<div>
 	<form method = "POST" action="">
@@ -28,3 +93,4 @@
 	</form>
 	</div>
 {% endfor %}
+	</body>
