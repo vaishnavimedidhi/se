@@ -16,27 +16,19 @@ class TestView:
 		response = searchAuthors(request)
 		assert response.status_code == 200
 
-#______________________________________________________________________________________
-	# def test_singleAuthor(self):
+	def test_singleAuthor(self):
 
-	# 	path = reverse('SingleAuthor',kwargs = {'authorName':'Andrew Ng'})
-	# 	request = RequestFactory().get(path)
+		path = reverse('SingleAuthor',kwargs = {'authorName':'Andrew Ng'})
+		request = RequestFactory().get(path)
 
-	# 	response = SingleAuthor(request,'Andrew Ng')
-	# 	assert response.status_code == 200
+		response = SingleAuthor(request,'Andrew Ng')
+		assert response.status_code == 200
 
 
-	# def test_singlePublication(self):
+	def test_singlePublication(self):
 
-	# 	path = reverse('SinglePublication',kwargs = {'authorName':'Andrew Ng','pubind':0})
-	# 	request = RequestFactory().get(path)
+		path = reverse('SinglePublication',kwargs = {'authorName':'Andrew Ng','pubind':0})
+		request = RequestFactory().get(path)
 
-	# 	response = SinglePublication(request,'Andrew Ng',0)
-	# 	assert response.status_code == 200
-#_________________________________________________________________________________________
-
-	#Know different types of testing in views 
-	#form testing in profiles/auth
-	#models testing in auth
-	#authenticated access for different views
-	
+		response = SinglePublication(request,'Andrew Ng',0)
+		assert response.status_code == 200
