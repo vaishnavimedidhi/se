@@ -68,8 +68,8 @@
 <form method='POST', action = "{% url 'searchAuthors' %}">
 	{% csrf_token %}
 	<!-- <h1>hello</h1> -->
-	<input type = 'text',, name = 'keyword'>
-	<input type= 'submit'>
+	<input type = 'text' name = 'keyword' id='searchhere' placeholder="SearchHere">
+	<input type= 'submit' id="submitbutton">
 
 </form>
 </div>
@@ -83,7 +83,7 @@
 		<!-- <a href = '{{ profile_link }}' >Original Profile </a> -->
 		<!-- <input type = 'submit', value= 'Check Profile', placeholder = '{{ auth }}', name = 'authorName'> -->
 		<img src="{{ profile_link }}">
-		<a href="{% url 'SingleAuthor' authorName=auth %}" >checkoutProfile</a>
+		<a href="{% url 'SingleAuthor' authorName=auth %}" id="checkoutprofilelink">checkoutProfile</a>
 		<h4>Interests: </h4>
 		{% for i in interest %}
 			 <p>{{ i }}</p>

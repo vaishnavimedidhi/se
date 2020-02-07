@@ -146,7 +146,7 @@
 			<div>
 			<form method='POST',action="">
 				{{ pub }}
-				<a href="{% url 'SinglePublication' authorName=author.name pubind=index %}">See Full Description</a>
+				<a href="{% url 'SinglePublication' authorName=author.name pubind=index %}" id="publication {{ index }}">See Full Description</a>
 			</form>
 		</div>
 			

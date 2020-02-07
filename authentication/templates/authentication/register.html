@@ -198,26 +198,26 @@ a.button:hover {
       
     <hr>
     <div class="accounttype">
-      <input type="radio" value="None" id="radioOne" name="person" checked/>
-      <label for="radioOne" class="radio" chec>Student</label>
-      <input type="radio" value="None" id="radioTwo" name="person" />
+      <input type="radio" value="SRF" id="radioOne" name="person" checked/>
+      <label for="radioOne" class="radio">Student</label>
+      <input type="radio" value="COM" id="radioTwo" name="person" />
       <label for="radioTwo" class="radio">Professor</label>
     </div>
   <hr>
   <label id="icon" for="name"><i class="icon-envelope "></i></label>
-  <input type="email" name="email" id="name" placeholder="Email" required/>
+  <input type="email" name="email" id="email" placeholder="Email" required/>
   <label id="icon" for="name"><i class="icon-user"></i></label>
   <input type="text" name="name" id="name" placeholder="Name" required/>
   <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="password" name="password" id="name" placeholder="Password" required/>
+  <input type="password" name="password" id="password" placeholder="Password" required/>
   <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="number" name="contact_number" id="name" placeholder="Phone number" required/>
+  <input type="number" name="contact_number" id="phonenumber" placeholder="Phone number" required/>
   <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="text" name="acheivement" id="name" placeholder="Acheivements" required/>
+  <input type="text" name="acheivement" id="acheivements" placeholder="Acheivements" required/>
   <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="text" name="stream" id="name" placeholder="Stream" required/>
+  <input type="text" name="stream" id="stream" placeholder="Stream" required/>
   <label id="icon" for="name"><i class="icon-shield"></i></label>
-  <input type="text" name="url" id="name" placeholder="Reference -link" required/>
+  <input type="text" name="url" id="reflink" placeholder="Reference -link" required/>
   <br><br>
   <div class="gender">
     <input type="radio" value="None" id="male" name="gender" checked/>
@@ -226,7 +226,7 @@ a.button:hover {
     <label for="female" class="radio">Female</label>
    </div> 
    <p>By clicking Register, you agree on our <a href="#">terms and condition</a>.</p>
-   <input type="submit" class="button" value="register" name="register">
+   <input type="submit" class="button" value="register" name="register" id="registerbutton">
    
    {% csrf_token %}
   </form>

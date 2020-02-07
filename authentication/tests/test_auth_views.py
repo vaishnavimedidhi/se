@@ -25,18 +25,13 @@ class Testview(TestCase):
 #testing signin view
 
 	def test_signin(self):
-		# path = reverse('signin')
-		# request = RequestFactory().get(path)
+	
 		path = reverse('signin')
 		request = RequestFactory().get(path)
 		print(request)
-		# response = signin(request)
-		# assert response.status_code==200
+
 		c = Client()
 		response = c.post('/signin/',{'username':'Bavish','password':'bavishprasath'},follow=True)
-		# info = c.get('/dashboard/')
-		# print(info)
-		# assert response.un=='Bavish'
 		assert response.status_code==200
 
 	def test_signup(self):
